@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # Run Scalafmt check
-
+#echo "Running Scalafmt check..."
+#sbt scalafmtCheckAll
+#if [ $? -ne 0 ]; then
+#  echo "Scalafmt check failed. Please format your code with 'sbt scalafmtAll'."
+#  exit 1
+#fi
 
 # Run WartRemover check
 echo "Running WartRemover..."
