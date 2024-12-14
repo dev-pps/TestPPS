@@ -1,11 +1,10 @@
-
-
 ThisBuild / scalaVersion := "3.3.4"
 
 scalafmtOnCompile := true
 wartremoverWarnings ++= Warts.all
 
 lazy val root = (project in file("."))
+  .enablePlugins(WartRemover)
   .settings(
     name := "TestPPS",
     libraryDependencies ++= Seq(
