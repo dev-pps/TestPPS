@@ -10,8 +10,8 @@ lazy val startupTransition: State => State = { s: State =>
 scalafmtOnCompile := true
 
 lazy val root = (project in file("."))
-  .enablePlugins(ScalafmtPlugin)
-  .enablePlugins(WartRemover)
+//  .enablePlugins(ScalafmtPlugin)
+//  .enablePlugins(WartRemover)
   .settings(
     name := "TestPPS",
     libraryDependencies ++= Seq(
