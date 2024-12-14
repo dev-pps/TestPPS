@@ -13,4 +13,4 @@ gh pr create --base <branch where to merge> --head <branch with modification to 
 https://www.wartremover.org/doc/install-setup.html
 https://scalameta.org/scalafmt/docs/configuration.html
 
-how to update hooks before compiling
+how to update hooks before compiling? sbt watch sus
