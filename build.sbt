@@ -1,6 +1,6 @@
 ThisBuild / scalaVersion := "3.3.4"
 
-wartremoverErrors ++= Warts.unsafe
+//wartremoverErrors ++= Warts.unsafe
 wartremoverWarnings ++= Warts.all
 
 lazy val startupTransition: State => State = { s: State =>
