@@ -7,4 +7,4 @@ if [ $? -ne 0 ]; then
   echo "WartRemover found issues. Please fix them before committing."
   exit 1
 fi
-echo "All checks passed!asfasdfas"
+echo "All checks passed!dsafghgdsa"
