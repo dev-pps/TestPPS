@@ -1,4 +1,4 @@
-# Branch protection
+g# Branch protection
 to set a rule -> settings -> rules -> ruleset
 
 for now only main branch is protected and:
