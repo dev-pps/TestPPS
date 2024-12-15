@@ -2,7 +2,8 @@
 
 echo "Running WartRemover..."
 sbt compile
-sbt test
+sbt clean coverage test
+sbt coverageReport
 # shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
   echo "WartRemover found issues. Please fix them before committing."
