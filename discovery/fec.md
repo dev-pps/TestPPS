@@ -21,3 +21,19 @@ git branch -d localBranchName
 // delete branch remotely
 git push origin --delete remoteBranchName
 
+
+3.2. Tags
+To include different kinds of information in Scaladoc, we can use pre-defined tags:
+
+@author specifies the author of the class
+@constructor provides an explanation for the constructor
+@param provides any useful description about a method’s parameter or input it should expect
+@return provides a description of what a method will or can return
+@since specifies which version the class, field, or method was added to the project
+@version specifies the version of the software, commonly used with %I% and %G% macros
+@throws is used to further explain the cases in which the software may expect an exception
+@deprecated gives an explanation of why code was deprecated, when it may have been deprecated, and what the alternatives are
+@todo is used to document pending items for a method or class
+
+sbt doc
+
