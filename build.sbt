@@ -1,6 +1,7 @@
 ThisBuild / scalaVersion := "3.3.4"
 
 scalafmtOnCompile := true
+coverageEnabled := true
 wartremoverErrors ++= Warts.unsafe
 wartremoverWarnings ++= Warts.all
 
