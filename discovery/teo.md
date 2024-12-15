@@ -27,6 +27,7 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 
 **How to configure signature:** usefull link ---> [GPG 🔗](https://central.sonatype.org/publish/requirements/gpg/)
 - create own key-pair running on terminal 
+  `gpg --gen-key`
   
   `gpg --list-keys`
 - distribute it to a key server so that users can validate it using command: 
