@@ -4,6 +4,7 @@ object asd {
     println("Hello, world!")
   }
 }
+
 class Person() {
   val name = "John"
   val age  = 30
@@ -17,3 +18,4 @@ class Person() {
   }
 
 }
+

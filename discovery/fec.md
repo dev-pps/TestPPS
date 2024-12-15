@@ -14,8 +14,10 @@ https://www.wartremover.org/doc/install-setup.html
 https://scalameta.org/scalafmt/docs/configuration.html
 
 how to update hooks before compiling? sbt watch sus
+
 // delete branch locally
 git branch -d localBranchName
 
 // delete branch remotely
 git push origin --delete remoteBranchName
+
