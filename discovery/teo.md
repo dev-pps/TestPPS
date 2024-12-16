@@ -28,7 +28,7 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 **How to configure signature:** usefull link ---> [GPG 🔗](https://central.sonatype.org/publish/requirements/gpg/)
 - create own key-pair running on terminal 
   `gpg --gen-key`
-  
+
   `gpg --list-keys`
 - distribute it to a key server so that users can validate it using command: 
 
@@ -41,6 +41,15 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 - configure git to use generate key for signing (firmare) files 
   
   `git config --global user.signingkey <YOUR_KEY_ID>`
+
+### Configure git to sing commits
+1. run `git config commit.gpgsign true` (To sign all commits by default in any local repository on your computer, run `git config --global commit.gpgsign true`)
+2. When committing changes in your local branch, add the `-S` flag:
+
+  ```bash
+  $ git commit -S -m "YOUR_COMMIT_MESSAGE"
+  # Creates a signed commit
+  ```
 
 ## Stashing [🔗](https://unibo-spe.github.io/08-advanced-git/#/3)
 
