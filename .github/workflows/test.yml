@@ -16,7 +16,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-22.04, windows-2022, macos-13 ]
+        os: [ ubuntu-22.04, windows-2022, macos-14 ]
 
     runs-on: ${{ matrix.os }}
 
@@ -28,6 +28,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'sbt'
+      - name: Install SBT on macOS
+        if: runner.os == 'macOS'
+        run: brew install sbt
       - name: Run tests
         run: sbt test
 
