@@ -10,15 +10,6 @@ env:
 
 jobs:
   release:
-    if: >-
-      github.event_name != 'pull_request'
-      && github.ref == 'refs/heads/main'
-      && contains(needs.*.result, 'success')
-      && !contains(needs.*.result, 'failure')
-      && !github.event.repository.fork
-    concurrency:
-      group: release-${{ github.event.number || github.ref }}
-      cancel-in-progress: true
     permissions:
       contents: write
       issues: write
