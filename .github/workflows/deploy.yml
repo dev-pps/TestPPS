@@ -1,0 +1,55 @@
+name: CI/CD
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  JAVA_VERSION: 17
+
+jobs:
+  release:
+    if: >-
+      github.event_name != 'pull_request'
+      && github.ref == 'refs/heads/main'
+      && contains(needs.*.result, 'success')
+      && !contains(needs.*.result, 'failure')
+      && !github.event.repository.fork
+    concurrency:
+      group: release-${{ github.event.number || github.ref }}
+      cancel-in-progress: true
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.check-version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: "adopt"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: Install dependencies
+        run: npm install
+      - name: Avoid git hooks during release
+        run: rm -rf .git/hooks
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+      - name: Check version for release
+        id: check-version
+        shell: bash
+        run: |
+          GIT_VERSION=$(git describe --tags --exact-match HEAD || echo '')
+          if [ -n "$GIT_VERSION" ]; then
+            echo "version=$(echo $GIT_VERSION | sed 's/^v//')" >> "$GITHUB_OUTPUT"
+          fi
