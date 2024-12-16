@@ -9,7 +9,7 @@ on:
 jobs:
   update-doc-main:
     name: Merge main into doc after a PR is merged
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout
         uses: actions/checkout@v2
