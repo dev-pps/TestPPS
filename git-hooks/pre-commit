@@ -8,7 +8,7 @@ sbt compile
 #sbt coverageReport
 #sbt doc
 
-shellcheck disable=SC2181
+#shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
   echo "WartRemover found issues. Please fix them before committing."
   exit 1
