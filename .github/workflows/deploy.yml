@@ -37,6 +37,11 @@ jobs:
         run: npm install
       - name: Avoid git hooks during release
         run: rm -rf .git/hooks
+      - name: Debug Branch
+        run: |
+          echo 'Branch: $GITHUB_REF'
+      - name: Debug Semantic Release
+        run: semantic-release --no-ci --debug
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
