@@ -8,3 +8,4 @@ project/target
 project/.bloop
 project/metals.sbt
 target
+node_modules
