@@ -2,7 +2,10 @@
   "release": {
     "branches": [
       "main",
-      "fec/organization"
+      {
+        "name": "fec/organization",
+        "prerelease": false
+      }
     ],
     "preset": "conventionalcommits",
     "plugins": [
