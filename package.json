@@ -21,10 +21,7 @@
   },
   "private": true,
   "release": {
-    "branches": [
-      "main",
-      "fec/organization"
-    ],
+    "branches": ["main", "fec/organization"],
     "preset": "conventionalcommits",
     "plugins": [
       "@semantic-release/commit-analyzer",

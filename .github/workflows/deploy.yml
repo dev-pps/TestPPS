@@ -2,6 +2,9 @@ name: CI/CD
 
 on:
   push:
+    branches:
+      - main
+      - fec/organization
   workflow_dispatch:
 
 
