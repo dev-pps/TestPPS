@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/PPS-TrainSim/TestPPS/compare/v2.1.1...v2.2.0) (2024-12-23)
+
+### Features
+
+* meet ([572c9ea](https://github.com/PPS-TrainSim/TestPPS/commit/572c9eab2814e3fb4ce105270777cdc8a1bcde59))
+
 ## [2.1.1](https://github.com/PPS-TrainSim/TestPPS/compare/v2.1.0...v2.1.1) (2024-12-17)
 
 ### Bug Fixes
