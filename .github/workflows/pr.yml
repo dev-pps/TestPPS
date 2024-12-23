@@ -1,0 +1,10 @@
+on:
+  pull_request:
+  push:
+
+jobs:
+  ff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fast Forward PR
+        uses: endre-spotlab/fast-forward-js-action@2.1
