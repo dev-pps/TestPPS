@@ -15,5 +15,5 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.18" % Test // ScalaTest per i test
     ),
-    Global / onLoad ~= (_ andThen ("writeHooks" :: _)),
+//    Global / onLoad ~= (_ andThen ("writeHooks" :: _)),
   )
