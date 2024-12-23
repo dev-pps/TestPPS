@@ -28,7 +28,7 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 **How to configure signature:** usefull link ---> [GPG 🔗](https://central.sonatype.org/publish/requirements/gpg/)
 - create own key-pair running on terminal 
   `gpg --gen-key`
-  
+
   `gpg --list-keys`
 - distribute it to a key server so that users can validate it using command: 
 
@@ -41,6 +41,24 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 - configure git to use generate key for signing (firmare) files 
   
   `git config --global user.signingkey <YOUR_KEY_ID>`
+
+### Configure git to sing commits
+1. run `git config commit.gpgsign true` (To sign all commits by default in any local repository on your computer, run `git config --global commit.gpgsign true`)
+2. When committing changes in your local branch, add the `-S` flag:
+
+  ```bash
+  $ git commit -S -m "YOUR_COMMIT_MESSAGE"
+  # Creates a signed commit
+  ```
+
+**IF FAIL WITH ERROR LIKE:**
+```bash
+error: gpg failed to sign the data
+fatal: failed to write commit object
+```
+1. try to run with `GIT_TRACE=1` command before commit commands to see which is the problem
+
+2. try to resolve with command: `export GPG_TTY=$(tty)` (probably it doesn't prompt you for password to sing commits)
 
 ## Stashing [🔗](https://unibo-spe.github.io/08-advanced-git/#/3)
 
@@ -214,3 +232,31 @@ Squashing results in *further alteration* than rebase
 - **Merge** when you **want to retain history**, keeping **track of what happened**
 - **Rebase** only when **you are the only one with the commits**, to favor linearity
 - **Squash** when some of the *commits are* somewhat *“tests”*, points in time you **do not want to get back** to anyway
+
+
+## Make custom git command
+Every script executable can be used as command of git with `git-`*name of scritp*.
+
+- create script or program executable (no specific language needed)
+- call it using `git-`*script-name* 
+
+
+## Git Hooks
+Scripts that execute when some events happen, stored in `.git/hooks`
+They are **not part of the repository code**, and hence **they cannot get commited and pushed**, CANNOT TRACK HOOKS, THEY ARE ONLY LOCAL.
+
+Events also dictate the file names:
+- `applypatch-msg`
+- `commit-msg`  
+particularly useful to enforce a commit message format! When you commit without message you are prompted to editor and then the message is used by `commit-msg` script and then make commit with message provided
+- `fsmonitor-watchman`
+- `pre-applypatch`
+- `pre-commit`
+- `pre-merge-commit`
+- `pre-push`
+- `pre-rebase`
+- `pre-receive`
+- `prepare-commit-msg`
+- `post-update`
+- `push-to-checkout`
+- `update`
