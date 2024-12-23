@@ -1,4 +1,10 @@
 
+# Pull Request [🔗](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+## When and Why?
+- **When:** propose and collaborate on changes (proposed in new branch) to a repository. 
+  new_changes_branch 
+- **Why:**  ensures that the **default branch (usually `main`) only contains finished** and approved work.
+
 # Git - Advanced
 
 Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-git/#)
@@ -21,6 +27,7 @@ Notes from [Slide SPE - Pianini 🔗](https://unibo-spe.github.io/08-advanced-gi
 
 **How to configure signature:** usefull link ---> [GPG 🔗](https://central.sonatype.org/publish/requirements/gpg/)
 - create own key-pair running on terminal 
+  `gpg --gen-key`
   
   `gpg --list-keys`
 - distribute it to a key server so that users can validate it using command: 
@@ -58,6 +65,118 @@ Stashing takes the dirty state of the working directory and saves it on a **st
 ## Rebase [🔗](https://unibo-spe.github.io/08-advanced-git/#/7)
 
 **Rebasing** provides a way to alter the project history by *changing the parent* of (re-base) existing commits
+
+In other words (in italiano 🇮🇹🍕🍝): un blocco di commit consecutivi di una linea di sviluppo (tutti quelli di un branch o da un punto in avanti) vengono presi ed agganciati all'ultimo commit di un altro branch.
+Cambi il commit iniziale di quella sequenza di commit che prendi.
+
+### Practical example with commands
+#### Before rebase (fast-forward)
+```mermaid
+flowchart RL
+  HEAD{{"HEAD"}}
+  master(master)
+  experiment(experiment)
+  C3([3]) --> C2([2]) --> C1([1])
+  C4([4']) --> C3
+
+  master -.-> C3
+  experiment -.-> C4
+
+  HEAD -.-> C4
+  HEAD --"fas:fa-link"--o experiment
+
+  class HEAD head;
+  class master,experiment branch;
+  class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10 commit;
+```
+- move to branch i wanna rebase:
+  
+  `git checkout experiment`
+- rebase current branch commits to destination branch (in tha case `master`):
+
+    `git rebase master`
+- go back to destination branch and do a merge:
+  
+  `git checkout master && git merge`
+
+#### After rebase (fast-forward)
+```mermaid
+flowchart RL
+  HEAD{{"HEAD"}}
+  master(master)
+  experiment(experiment)
+  C3([3]) --> C2([2]) --> C1([1])
+  C4([4']) --> C3
+
+  master -.-> C4
+  experiment -.-> C4
+
+  HEAD -.-> C4
+  HEAD --"fas:fa-link"--o master
+
+  class HEAD head;
+  class master,experiment branch;
+  class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10 commit;
+```
+### Advanced rebase
+
+```mermaid
+flowchart RL
+  HEAD{{"HEAD"}}
+  master(master)
+  server(server)
+  client(client)
+
+  C10([10]) --> C4([4]) --> C3([3]) --> C2([2]) --> C1([1])
+  C6([6]) --> C5([5]) --> C2
+  C9([9]) --> C8([8]) --> C3
+
+  master -.-> C6
+  server -.-> C10
+  client -.-> C9
+
+  HEAD -.-> C6
+  HEAD --"fas:fa-link"--o master
+
+  class HEAD head;
+  class master,experiment,client,server branch;
+  class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10 commit;
+```
+We want to leave `server` as is, but rebase `client` onto `master`
+
+Option `--onto` can be used to transplant entire branches
+* `git rebase --onto destination start end`
+    * pick commits from `start` to `end`
+    * reply them starting from `destination`
+
+With command `git rebase --onto master server client` we are saying:
+- *pick all commits from `server` (excluded) to `client` (included)
+- remove them and reply them starting from `master`*
+
+```mermaid
+flowchart RL
+  HEAD{{"HEAD"}}
+  master(master)
+  server(server)
+  client(client)
+
+  C10([10]) --> C4([4]) --> C3([3]) --> C2([2]) --> C1([1])
+  C6([6]) --> C5([5]) --> C2
+  C9([9']) --> C8([8']) --> C6
+
+  master -.-> C6
+  server -.-> C10
+  client -.-> C9
+
+  HEAD -.-> C6
+  HEAD --"fas:fa-link"--o master
+
+  class HEAD head;
+  class master,experiment,client,server branch;
+  class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10 commit;
+```
+
+### Reabse interactive [🔗](https://unibo-spe.github.io/08-advanced-git/#/24)
 
 ## Squashing [🔗](https://unibo-spe.github.io/08-advanced-git/#/16)
 
