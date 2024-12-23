@@ -5,7 +5,7 @@ on:
       - dismissed
 
 jobs:
-  ff:
+  auto-merge:
     permissions:
       contents: write
       issues: write
