@@ -1,10 +1,13 @@
 on:
-  pull_request:
-  push:
+  pull_request_review:
+    types:
+      - submitted
+      - dismissed
 
 jobs:
   ff:
     runs-on: ubuntu-latest
     steps:
-      - name: Fast Forward PR
-        uses: endre-spotlab/fast-forward-js-action@2.1
+      - name: check type
+        run: echo ${{ github.event.review.state }}
+#        uses: endre-spotlab/fast-forward-js-action@2.1
