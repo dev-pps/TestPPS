@@ -6,9 +6,11 @@ on:
 
 jobs:
   ff:
-    if : ${{ github.event.review.state == 'approved' }}
+
     runs-on: ubuntu-latest
     steps:
+      - if: ${{ github.event.review.state == 'approved' }}
+        run : echo "Approved"
       - uses: actions/checkout@v4.2.2
       - name: Fast Forward PR
         id: ff-action
