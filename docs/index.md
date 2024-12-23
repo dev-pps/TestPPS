@@ -1,27 +1,25 @@
-## DOCS
-test update
+---
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
 
-[Link to another page](./another-page.md) and the code is 
-```markdown
-[Link to another page](./another-page.md)
-```
+hero:
+  name: "Demo Report"
+  text: "A stupid report site demo"
+  tagline: My great project tagline
+  actions:
+    - theme: brand
+      text: Markdown Examples
+      link: /markdown-examples
+    - theme: alt
+      text: API Examples
+      link: /api-examples
 
-for list like this:
-1. one
-2. two
-   - tre
-   - four
-* five
-- six
+features:
+  - title: Feature A
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Feature B
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Feature C
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+---
 
-code is:
-
-```markdown
-List like this:
-1. one
-2. two
-   - tre
-   - four
-* five
-- six
-```
