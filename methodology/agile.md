@@ -1,6 +1,6 @@
 ﻿## Agile (Scrum)
 
-1. ### Scegliere il mittente stakeholder
+1. ### Scegliere il mittente stakeholder = TEO
 
 Chi ha avuto l'idea del progetto (funge da sorta di committente, garantisce usabilità/qualità)
 
@@ -16,8 +16,8 @@ Chi ha le doti di coordinamento per il team
     - dati di processo/progetto
         - diagramma di velocità
         - diagramma burn down
-    - meeting: devono durare il 20% del tempo dello sprint
-        - Tipologie
+    - meeting: devono durare il 20% del tempo dello sprint (meeting scelti per ogni sprint)
+        - Tipologie 
             - meeting frequenti
             - meeting inizio e fine sprint (report finale da tenere in versione):
               se si vuole far meglio a metà sprint (per aggiustare il tiro)
@@ -36,7 +36,7 @@ Chi ha le doti di coordinamento per il team
                 - si fa un report di come è andato lo sprint/progetto
                 - quante user story si sono fatte
                 - ricalcolo del diagramma burn down e velocità (fatto solo con le user story fatte)
-    - spring
+    - spring (1 settinama)
         - siano corti e frequenti (15 ore di lavoro in una settimana cosi consiglia viroli, weeken libero)
         - ogni sprint risultati tangibili (un valore per gli stakeholder)
     - backlog: sono documenti che contengono le user story (quello che si deve fare)

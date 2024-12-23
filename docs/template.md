@@ -21,7 +21,7 @@ Capitoli obbligatori:
             - analisi => capire come funziona un sistema ferroviario (senza costruirlo)
             - previsione => permette di stimare il comportamento del sistema a cambiamenti o eventi
             - formazione e apprendimento => fornisce un ambiente sicuro, dove le persone imparano
-            - test e sviluppo => testare nuovi prototipi (prima di costruirli)
+            - test e sviluppo => testare nuovi prototipi (prima di costruirli) 
             - Ottimizzazione => prestazione del sistema, riduzione dei tempi/costi
             - valutazione rischio => identificare i possibili guasti o criticità prima che si verifichino
     - modello di dominio (identificare i concetti chiave)
@@ -52,8 +52,7 @@ Il tutto corredato da pochi ma efficaci diagrammi UML
 
 - architettura complessiva (MVC, MVU, Hexagonal, ???)
 - descrizione di pattern architetturali usati
-- eventuali componenti del sistema distribuito (per noi no)
-- scelte tecnologiche cruciali ai fini architetturali
+- scelte tecnologiche cruciali ai fini architetturali  
 
 4. ### Design di dettaglio
 
