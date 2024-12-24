@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/dev-pps/TestPPS/compare/v1.0.0...v1.1.0) (2024-12-23)
+
+### Features
+
+* meet 1 ([527fe5d](https://github.com/dev-pps/TestPPS/commit/527fe5d8ff046eb16b409d41c82978dd55e22991))
+* merge ([48c6898](https://github.com/dev-pps/TestPPS/commit/48c6898e2d58a0f8c67893a0b45ad14de0a82bb4))
+
 ## 1.0.0 (2024-12-23)
 
 ### ⚠ BREAKING CHANGES

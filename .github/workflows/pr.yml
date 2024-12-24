@@ -1,0 +1,23 @@
+on:
+  pull_request_review:
+    types:
+      - submitted
+      - dismissed
+
+jobs:
+  auto-merge:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.event.review.state == 'approved' }}
+        run : echo "Approved"
+      - uses: actions/checkout@v4.2.2
+      - name: pull-request merge
+        uses: sudo-bot/action-pull-request-merge@v1.2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          merge-method: fast-forward
