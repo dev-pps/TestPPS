@@ -37,5 +37,13 @@ To include different kinds of information in Scaladoc, we can use pre-defined ta
 
 sbt doc
 
+https://conventional-branch.github.io/
+
+To override local branch
+git fetch
+git reset origin/main --hard
+
+git commit -m "commit" -m "description"
+
 
 
