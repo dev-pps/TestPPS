@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.CmXSGuKu.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"report/4-details-design.md","filePath":"report/4-details-design.md"}'),r={name:"report/4-details-design.md"};function s(o,n,i,d,c,p){return a(),t("div")}const m=e(r,[["render",s]]);export{l as __pageData,m as default};
