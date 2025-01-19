@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.CmXSGuKu.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"report/5-impl-violani.md","filePath":"report/5-impl-violani.md"}'),o={name:"report/5-impl-violani.md"};function r(i,n,p,s,c,l){return a(),t("div")}const d=e(o,[["render",r]]);export{_ as __pageData,d as default};

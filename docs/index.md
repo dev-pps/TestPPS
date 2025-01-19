@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "Demo Report"
-  text: "A stupid report site demo"
-  tagline: My great project tagline
+  name: "PPS-23-Ulisse"
+  text: "A train infrastructure simulator"
+  tagline: PPS exam project
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Report
+      link: /0-intro
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Scala docs
+      link: /
 
 features:
   - title: Feature A

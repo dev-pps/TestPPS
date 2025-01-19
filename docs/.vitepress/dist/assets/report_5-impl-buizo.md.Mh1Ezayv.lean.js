@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.CmXSGuKu.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"report/5-impl-buizo.md","filePath":"report/5-impl-buizo.md"}'),r={name:"report/5-impl-buizo.md"};function a(p,i,s,c,n,m){return o(),t("div")}const d=e(r,[["render",a]]);export{l as __pageData,d as default};
